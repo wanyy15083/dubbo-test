@@ -1,7 +1,7 @@
-package com.gome.o2m.dubbo.sku.impl;
+package com.frotly.dubbo.impl;
 
-import com.gome.o2m.dubbo.sku.api.Sku;
-import com.gome.o2m.dubbo.sku.api.SkuService;
+import com.frotly.dubbo.api.SkuService;
+import com.frotly.dubbo.api.Sku;
 
 /**
  * Created by songyigui on 2017/4/21.

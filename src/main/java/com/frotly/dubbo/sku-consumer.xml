@@ -7,9 +7,8 @@
 
     <dubbo:application name="sku-consumer"/>
 
-    <dubbo:registry address="zookeeper://10.128.31.93:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <!--<dubbo:reference id="skuService" interface="com.gome.o2m.dubbo.sku.api.SkuService"/>-->
-    <dubbo:reference id="skuForOuterReadService" interface="com.gome.o2m.nic.outer.service.SkuForOuterReadService"/>
+    <dubbo:reference id="skuService" interface="com.frotly.dubbo.api.SkuService"/>
 
 </beans>

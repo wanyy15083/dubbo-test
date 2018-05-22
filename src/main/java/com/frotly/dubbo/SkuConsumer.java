@@ -13,18 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.gome.o2m.dubbo.sku;
+package com.frotly.dubbo;
 
+import com.frotly.dubbo.api.Sku;
+import com.frotly.dubbo.api.SkuService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-public class SkuProvider {
-    
+public class SkuConsumer {
+
     public static void main(String[] args) throws Exception {
-        String config = SkuProvider.class.getPackage().getName().replace('.', '/') + "/sku-provider.xml";
+        String config = SkuConsumer.class.getPackage().getName().replace('.', '/') + "/sku-consumer.xml";
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(config);
         context.start();
+        SkuService skuService = (SkuService) context.getBean("skuService");
+        Sku sku = skuService.get(1);
+        System.out.println(sku);
+
         System.in.read();
     }
-    
 }

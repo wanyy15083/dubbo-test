@@ -13,27 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.gome.o2m.dubbo.sku;
+package com.frotly.dubbo;
 
-import com.gome.o2m.Response;
-import com.gome.o2m.nic.outer.dto.SkuSpider;
-import com.gome.o2m.nic.outer.service.SkuForOuterReadService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-public class SkuConsumer {
-
+public class SkuProvider {
+    
     public static void main(String[] args) throws Exception {
-        String config = SkuConsumer.class.getPackage().getName().replace('.', '/') + "/sku-consumer.xml";
+        String config = SkuProvider.class.getPackage().getName().replace('.', '/') + "/sku-provider.xml";
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(config);
         context.start();
-//        SkuService skuService = (SkuService) context.getBean("skuService");
-//        Sku sku = skuService.get(1);
-//        System.out.println(sku);
-
-        SkuForOuterReadService skuForOuterReadService = (SkuForOuterReadService) context.getBean("skuForOuterReadService");
-        Response<SkuSpider> reponse = skuForOuterReadService.getSkuSpiderByPlusSkuId(null);
-        System.out.println(reponse.getResult());
         System.in.read();
     }
+    
 }

@@ -1,4 +1,4 @@
-package com.gome.o2m.dubbo.sku.api;
+package com.frotly.dubbo.api;
 
 import java.io.Serializable;
 
